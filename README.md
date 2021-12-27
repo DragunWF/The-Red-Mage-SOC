@@ -1,4 +1,4 @@
-**The Red Mage: Stone of Chaos**
+# The Red Mage: Stone of Chaos
 
 **Description:**
 
