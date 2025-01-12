@@ -1,0 +1,355 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://User Interface/Health Bar/Health bar 5.png" type="Texture" id=2]
+[ext_resource path="res://User Interface/Health Bar/Health Bar.png" type="Texture" id=3]
+[ext_resource path="res://User Interface/Mana Bar/Mana Bar (5).png" type="Texture" id=4]
+[ext_resource path="res://User Interface/Mana Bar/Mana Bar.png" type="Texture" id=5]
+[ext_resource path="res://User Interface/Kenney Pixel.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=7]
+[ext_resource path="res://Audio/click1.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Audio/Jump.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/Fireball.wav" type="AudioStream" id=10]
+[ext_resource path="res://Audio/laser3.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Audio/Damage.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/sfx_lose.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Audio/handleSmallLeather.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Audio/Grab Item (High Tone).wav" type="AudioStream" id=15]
+[ext_resource path="res://Characters/Player/Red Mage.png" type="Texture" id=16]
+[ext_resource path="res://Characters/Player/Damage.png" type="Texture" id=17]
+[ext_resource path="res://Characters/Player/Jump 2.png" type="Texture" id=18]
+[ext_resource path="res://Characters/Player/Jump Damage.png" type="Texture" id=19]
+[ext_resource path="res://Characters/Player/Dead 1.png" type="Texture" id=20]
+[ext_resource path="res://Characters/Player/Dead 2.png" type="Texture" id=21]
+[ext_resource path="res://Characters/Player/Dead 3.png" type="Texture" id=22]
+[ext_resource path="res://Characters/Player/Dead 4.png" type="Texture" id=23]
+[ext_resource path="res://Characters/Player/Dead 5.png" type="Texture" id=24]
+[ext_resource path="res://Characters/Player/Dead 6.png" type="Texture" id=25]
+[ext_resource path="res://Characters/Player/Dead 7.png" type="Texture" id=26]
+[ext_resource path="res://Characters/Player/Jump 1.png" type="Texture" id=27]
+[ext_resource path="res://Characters/Player/walk 1.png" type="Texture" id=28]
+[ext_resource path="res://Characters/Player/walk 2.png" type="Texture" id=29]
+[ext_resource path="res://Characters/Player/walk 3.png" type="Texture" id=30]
+[ext_resource path="res://Characters/Player/walk 4.png" type="Texture" id=31]
+[ext_resource path="res://Characters/Player/walk 5.png" type="Texture" id=32]
+[ext_resource path="res://Characters/Player/Idle.png" type="Texture" id=33]
+[ext_resource path="res://Characters/Blue Mage/Walk 1.png" type="Texture" id=34]
+[ext_resource path="res://Characters/Blue Mage/Jump 2.png" type="Texture" id=35]
+[ext_resource path="res://Characters/Blue Mage/Idle 1.png" type="Texture" id=36]
+[ext_resource path="res://Characters/Blue Mage/Death 1.png" type="Texture" id=37]
+[ext_resource path="res://Characters/Blue Mage/Death 2.png" type="Texture" id=38]
+[ext_resource path="res://Characters/Blue Mage/Death 3.png" type="Texture" id=39]
+[ext_resource path="res://Characters/Blue Mage/Death 4.png" type="Texture" id=40]
+[ext_resource path="res://Characters/Blue Mage/Death 5.png" type="Texture" id=41]
+[ext_resource path="res://Characters/Blue Mage/Death 6.png" type="Texture" id=42]
+[ext_resource path="res://Characters/Blue Mage/Death 7.png" type="Texture" id=43]
+[ext_resource path="res://Characters/Blue Mage/Jump 1.png" type="Texture" id=44]
+[ext_resource path="res://Characters/Blue Mage/Walk 2.png" type="Texture" id=45]
+[ext_resource path="res://Characters/Blue Mage/Walk Fix/Walk 3.png" type="Texture" id=46]
+[ext_resource path="res://Characters/Blue Mage/Walk 4.png" type="Texture" id=47]
+[ext_resource path="res://Characters/Blue Mage/Walk Fix/Walk 5.png" type="Texture" id=48]
+[ext_resource path="res://Characters/Blue Mage/Walk 6.png" type="Texture" id=49]
+[ext_resource path="res://Characters/Blue Mage/Idle 2.png" type="Texture" id=50]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "JumpDamage",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Damage",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 35 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ) ],
+"loop": false,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "JumpDamage",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Damage",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 16 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 10.407, 16 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 11
+
+[node name="Interface" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarHealth" type="CenterContainer" parent="UI/Interface"]
+anchor_right = 1.0
+margin_top = -32.0
+margin_right = -492.0
+margin_bottom = 96.0
+
+[node name="Health" type="TextureProgress" parent="UI/Interface/BarHealth"]
+margin_left = 14.0
+margin_top = 14.0
+margin_right = 114.0
+margin_bottom = 114.0
+max_value = 5.0
+value = 5.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+
+[node name="BarMana" type="CenterContainer" parent="UI/Interface"]
+anchor_right = 1.0
+margin_top = -32.0
+margin_right = -492.0
+margin_bottom = 170.0
+
+[node name="Mana" type="TextureProgress" parent="UI/Interface/BarMana"]
+margin_left = 14.0
+margin_top = 51.0
+margin_right = 114.0
+margin_bottom = 151.0
+max_value = 5.0
+value = 5.0
+texture_under = ExtResource( 4 )
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="GameOver" type="Control" parent="UI"]
+pause_mode = 2
+modulate = Color( 0.87451, 0.0666667, 0.0666667, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = SubResource( 2 )
+
+[node name="Menu" type="CenterContainer" parent="UI/GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="UI/GameOver/Menu"]
+margin_left = 254.0
+margin_top = 131.0
+margin_right = 366.0
+margin_bottom = 209.0
+
+[node name="Died" type="Label" parent="UI/GameOver/Menu/VBox"]
+margin_right = 112.0
+margin_bottom = 12.0
+text = "You Died"
+align = 1
+
+[node name="Restart" type="Button" parent="UI/GameOver/Menu/VBox"]
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 34.0
+text = "Restart Level"
+
+[node name="Return" type="Button" parent="UI/GameOver/Menu/VBox"]
+margin_top = 38.0
+margin_right = 112.0
+margin_bottom = 56.0
+text = "Return to Main Menu"
+
+[node name="Quit" type="Button" parent="UI/GameOver/Menu/VBox"]
+margin_top = 60.0
+margin_right = 112.0
+margin_bottom = 78.0
+text = "Quit Game"
+
+[node name="Pause" type="Control" parent="UI"]
+pause_mode = 2
+modulate = Color( 0.819608, 0.054902, 0.054902, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = SubResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Click" type="AudioStreamPlayer" parent="UI/Pause"]
+stream = ExtResource( 8 )
+
+[node name="Menu" type="CenterContainer" parent="UI/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/Menu"]
+margin_left = 254.0
+margin_top = 120.0
+margin_right = 366.0
+margin_bottom = 220.0
+
+[node name="Title" type="Label" parent="UI/Pause/Menu/VBoxContainer"]
+margin_right = 112.0
+margin_bottom = 12.0
+text = "Game Paused"
+align = 1
+
+[node name="Resume" type="Button" parent="UI/Pause/Menu/VBoxContainer"]
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 34.0
+text = "Resume Game"
+
+[node name="Restart" type="Button" parent="UI/Pause/Menu/VBoxContainer"]
+margin_top = 38.0
+margin_right = 112.0
+margin_bottom = 56.0
+text = "Restart level"
+
+[node name="Return" type="Button" parent="UI/Pause/Menu/VBoxContainer"]
+margin_top = 60.0
+margin_right = 112.0
+margin_bottom = 78.0
+text = "Return to Main Menu"
+
+[node name="Quit" type="Button" parent="UI/Pause/Menu/VBoxContainer"]
+margin_top = 82.0
+margin_right = 112.0
+margin_bottom = 100.0
+text = "Quit Game"
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "Low Volume"
+
+[node name="FireballSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="EnergyBlastSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="DamageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+bus = "Low Volume"
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="SwitchMageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="GainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "Idle"
+
+[node name="AnimatedSpriteBlue" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 6 )
+animation = "Jump"
+
+[node name="FireballCastTime" type="Timer" parent="."]
+
+[node name="EnergyBlastCastTime" type="Timer" parent="."]
+
+[node name="InvincibleTime" type="Timer" parent="."]
+
+[node name="ManaRegenTime" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+shape = SubResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+
+[node name="PositionRight" type="Position2D" parent="."]
+position = Vector2( 23, 0 )
+
+[node name="PositionLeft" type="Position2D" parent="."]
+position = Vector2( -23, 0 )
+[connection signal="pressed" from="UI/GameOver/Menu/VBox/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="UI/GameOver/Menu/VBox/Return" to="." method="_on_Return_pressed"]
+[connection signal="pressed" from="UI/GameOver/Menu/VBox/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="UI/Pause/Menu/VBoxContainer/Resume" to="UI/Pause" method="_on_Resume_pressed"]
+[connection signal="pressed" from="UI/Pause/Menu/VBoxContainer/Restart" to="UI/Pause" method="_on_Restart_pressed"]
+[connection signal="pressed" from="UI/Pause/Menu/VBoxContainer/Return" to="UI/Pause" method="_on_Return_pressed"]
+[connection signal="pressed" from="UI/Pause/Menu/VBoxContainer/Quit" to="UI/Pause" method="_on_Quit_pressed"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSpriteBlue" to="." method="_on_AnimatedSpriteBlue_animation_finished"]
+[connection signal="timeout" from="FireballCastTime" to="." method="_on_FireballCastTime_timeout"]
+[connection signal="timeout" from="EnergyBlastCastTime" to="." method="_on_EnergyBlastCastTime_timeout"]
+[connection signal="timeout" from="InvincibleTime" to="." method="_on_InvincibleTime_timeout"]
+[connection signal="timeout" from="ManaRegenTime" to="." method="_on_ManaRegenTime_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
