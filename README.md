@@ -2,7 +2,7 @@
 
 ## Description
 
-This game was made in 2019 back when I was a Junior High School student and self-studied game development.
+This game was made in **2019** back when I was a Junior High School student and self-studied game development.
 
 This project was left incomplete. It does still have functional cutscenes though, hehe :)
 
